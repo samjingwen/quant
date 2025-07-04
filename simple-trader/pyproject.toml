@@ -1,0 +1,10 @@
+[project]
+name = "vanquish"
+version = "0.1.0"
+description = "Defeat the market thoroughly."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cryptography>=45.0.4",
+    "nautilus-trader[docker,ib]>=1.218.0",
+]
