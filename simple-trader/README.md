@@ -18,13 +18,13 @@ Buy and sell signals are generated when all indicators and price conditions are 
 - **Buys** when:
     - Not already in a position
     - MACD > MACD Signal
-    - Closing price > EMA-9
+    - Closing price > EMA
     - Stochastics %K > %D
 
 - **Sells** when:
     - Already in a position
     - MACD < MACD Signal
-    - Closing price < EMA(9)
+    - Closing price < EMA
     - Stochastics %K < %D
 
 ## Setup
