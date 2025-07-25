@@ -1,14 +1,14 @@
-#include "HistoricalDataRepository.hpp"
+#include "FileReaderFactory.hpp"
 #include <iostream>
 
-int main()
-{
-    auto prices = HistoricalDataRepository::load_close_prices("../data/sample_prices.csv");
+int main() {
+  const auto reader = FileReaderFactory::create(FileType::CSV);
+  const auto prices = reader->read("../data/sample_prices.csv");
 
-    std::cout << "Loaded " << prices.size() << " closing prices:" << std::endl;
+  std::println("Read {} closing prices:", prices.size());
 
-    for (size_t i = 0; i < prices.size(); ++i)
-        std::cout << "Day " << i + 1 << ": " << prices[i] << std::endl;
+  for (size_t i = 0; i < prices.size(); ++i)
+    std::println("Day {}: {}", i + 1, prices[i]);
 
-    return 0;
+  return 0;
 }
